@@ -17,4 +17,17 @@ function lapizzeria_styles() {
 // Agregar la function en el header.
 add_action('wp_enqueue_scripts', 'lapizzeria_styles');
 
+
+// Creation de menu
+function lapizzeria_menus() {
+    register_nav_menus(array(
+        // Creation des differents menu dans la page
+        'header-menu' => __('Header Menu', 'lapizzeria'),
+        'social-menu' => __('Social Menu', 'lapizzeria')
+    ));
+}
+
+// Agregar la function menu al init de wordpress
+add_action( 'init', 'lapizzeria_menus')
+
 ?>
