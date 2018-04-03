@@ -11,6 +11,197 @@ Tags: restaurant, mobile first, responsive, pizza
 Text Domain: lapizzeria
 */
 
-body{
-    
+html {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.contenedor {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+} 
+
+/*** EN TETE ***/
+
+header.encabezado-sitio {
+    border-bottom: 1px solid #c1c1c1;
+    padding-bottom: 30px;
+    margin-top: -25px;
+}
+
+div.logo {
+    text-align: center;
+}
+
+img.logotipo {
+    width: 250px;
+}
+
+@media only screen and (min-width: 768px){
+    div.logo {
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: 992px){
+    div.logo {
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 768px){
+
+    header.encabezado-sitio .contenedor {
+        position: relative;
+    }
+
+    .informacion-encabezado {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+div.direction {
+    display: block;
+    clear: both;
+    padding-top: 10px;
+}
+
+div.direction p {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+@media only screen and (min-width: 768px){
+    div.direction {
+        text-align: right;
+    }
+
+    div.direction p {
+        text-align: right;
+    }
+}
+
+/*** MENU REDES SOCIALES ***/
+
+nav.sociales ul {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+}
+
+.sr-text {
+    display: none;
+}
+
+@media only screen and (min-width: 768px){
+    nav.sociales ul {
+        float: right;
+    }
+}
+
+nav.sociales ul li {
+    position: relative;
+    display: inline-block;
+
+}
+
+nav.sociales ul li a:before {
+    font-family: 'FontAwesome';
+    display: inline-block;
+    vertical-align: top;
+    padding:  0 5px;
+    content: '\f08e';
+    font-size: 30px;
+    color: #000000;
+    -webkit-font-smoothing:antialiased;
+}
+
+/* 
+* grace (href*=) cela dit Cherche dans les liens (a) nimporte quel lien
+* qui commence par www. ou http://www ou https:// etc qui contient le 
+* lien suivant dans le cas de :
+*/
+
+/* Facebook */
+nav.sociales li a[href*="facebook.com"]::before {
+    /* Code Unicode de fontawesome*/
+    content: '\f09a';
+}
+
+/* Twitter */
+nav.sociales li a[href*="twitter.com"]::before {
+    /* Code Unicode de fontawesome*/
+    content: '\f099';
+}
+
+/* Pinterest */
+nav.sociales li a[href*="pinterest.com"]::before {
+    /* Code Unicode de fontawesome*/
+    content: '\f0d2';
+}
+
+/* Youtube */
+nav.sociales li a[href*="youtube.com"]::before {
+    /* Code Unicode de fontawesome*/
+    content: '\f16a';
+}
+
+/* Instagram */
+nav.sociales li a[href*="instagram.com"]::before {
+    /* Code Unicode de fontawesome*/
+    content: '\f16d';
+}
+
+/*** NAVEGACION PRINCIPAL ***/
+nav.menu-sitio ul{
+    list-style: none;
+    /* TABLE PREND SEULEMENT LE SIZE DU CONTENUE */
+    display: table;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+nav.menu-sitio ul li a {
+    text-align: center;
+    padding: 20px 0;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+nav.menu-sitio ul li a:hover {
+    color: #fff;
+}
+
+/* .current_page_item --> une classe de wordpress pour dire le El active */
+nav.menu-sitio ul li.current_page_item a::before {
+    font-family: 'FontAwesome';
+    content: '\f0f5';
+    margin-right: 15px;
+}
+
+nav.menu-sitio ul li.current_page_item a {
+    border-bottom: 7px solid #f3920b;
+}
+
+nav.menu-sitio ul li:hover {
+    background-color: #f3920b;
+}
+
+@media only screen and (min-width: 768px){
+    nav.menu-sitio ul li {
+        display: table-cell;
+        width: 1%;
+    }
 }
