@@ -31,7 +31,6 @@ html {
 header.encabezado-sitio {
     border-bottom: 1px solid #c1c1c1;
     padding-bottom: 30px;
-    margin-top: -25px;
 }
 
 div.logo {
@@ -161,6 +160,19 @@ nav.sociales li a[href*="instagram.com"]::before {
 }
 
 /*** NAVEGACION PRINCIPAL ***/
+
+/* Petite Screen menu no sale */
+nav.menu-sitio {
+    display: none;
+}
+
+/* Grand formato a partir de 768px menu sale */
+@media only screen and (min-width:768px){
+    nav.menu-sitio {
+        display: block;
+    }
+}
+
 nav.menu-sitio ul{
     list-style: none;
     /* TABLE PREND SEULEMENT LE SIZE DU CONTENUE */
@@ -203,5 +215,33 @@ nav.menu-sitio ul li:hover {
     nav.menu-sitio ul li {
         display: table-cell;
         width: 1%;
+    }
+}
+
+/*** RESPONSIVE MENU ***/
+
+/* Afficher dans Max With 767 and moin */
+@media only screen and (max-width:767px) {
+
+    .mobile-menu a {
+        height: 40px;
+        background-color: #0a801a;
+        width: 100%;
+        color: #fff !important;
+        display: block;
+        text-align: center;
+
+        
+        line-height: 40px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+
+}
+/* Ne pas afficher apres 768px */
+@media only screen and (min-width:768px) {
+    .mobile-menu a {
+        display: none;
     }
 }
