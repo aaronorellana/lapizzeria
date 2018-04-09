@@ -14,6 +14,13 @@ function lapizzeria_styles() {
     wp_enqueue_style('fontawesome');
     wp_enqueue_style('style');
 
+
+    // Registrar JS  ----- Sixieme parametre permet de mettre les fichier js dans le footer
+    wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0', true);
+    
+   
+    wp_enqueue_script('jquery');  // jQuery vient deja dans wordpress
+    wp_enqueue_script('scripts');
 }
 
 // Agregar la function en el header.
