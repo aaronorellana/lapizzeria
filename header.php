@@ -47,16 +47,26 @@
         </div> <!-- .contenedor -->
     </header>
 
-    <div class="contenedor navegacion">
-        <?php
-            // Arguments pour le menu
-            $args = array(
-                'theme_location' => 'header-menu',
-                'container' => 'nav',
-                'container_class' => 'menu-sitio'
-            );
+    <div class="menu-principal">
 
-            // Function pour print le menu
-            wp_nav_menu( $args );
-        ?>
-    </div> <!-- .contenedor navegacion -->
+        <div class="mobile-menu">
+            <a href="#" class="mobile"> <i class="fa fa-bars" aria-hidden="true"></i> Menu </a>
+        </div>
+
+
+        <div class="contenedor navegacion">
+            <?php
+                // Arguments pour le menu
+                $args = array(
+                    'theme_location' => 'header-menu',
+                    'container' => 'nav',
+                    'container_class' => 'menu-sitio'
+                );
+
+                // Function pour print le menu
+                wp_nav_menu( $args );
+            ?>
+        </div> <!-- .contenedor navegacion -->
+    </div> <!-- .menu-principal -->
+
+    
