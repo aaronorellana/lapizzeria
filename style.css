@@ -3,7 +3,7 @@ Theme Name: La Pizzeria
 Theme URI:
 Author: Aaron Orellana
 Author URI: http://aaronorellana.com
-Description: Theme para sitio werb de restaurantes o pizzas.
+Description: Theme para sitio web de restaurantes o pizzas.
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.-.html
@@ -20,11 +20,55 @@ html {
     box-sizing: inherit;
 }
 
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+.clear,
+.clear::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.texto-rojo {
+    color: #a30008
+}
+
+.texto-centrado {
+    text-align: center;
+}
+
 .contenedor {
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
-} 
+}
+
+img{
+    max-width: 100%;
+}
 
 /*** EN TETE ***/
 
@@ -133,6 +177,10 @@ nav.sociales ul li a:before {
 nav.sociales li a[href*="facebook.com"]::before {
     /* Code Unicode de fontawesome*/
     content: '\f09a';
+}
+
+nav.sociales li a[href*="facebook.com"]:hover {
+    border-bottom: 1px solid #3b5998;
 }
 
 /* Twitter */
@@ -245,3 +293,203 @@ nav.menu-sitio ul li:hover {
         display: none;
     }
 }
+
+
+/** Templates Contenido **/
+
+div.hero {
+    background-repeat: no-repeat;
+    background-position:  center center;
+    background-size: cover;
+    height: 450px;
+    text-align: center;
+    margin: 0 auto;
+    display: table;
+    position: relative;
+}
+
+div.hero::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+div.hero .contenido-hero {
+    display: table-cell;
+    vertical-align: middle;
+    color: #ffffff;
+    position: relative;
+    width: 100vw;
+    z-index: 2;
+}
+
+@media only screen and (min-width:768px){
+    div.texto-hero {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width:992px){
+    div.texto-hero {
+        width: 60%;
+    }
+}
+
+div.principal {
+    padding: 60px;
+    background-color: #fff;
+    position: relative;
+}
+
+@media only screen and (min-width:768px) {
+    div.principal {
+        margin-top: -90px;
+    }
+}
+
+.contenido-paginas p{
+    font-size: 18px;
+    line-height: 40px;
+    text-align: justify;
+}
+
+/** Footer **/
+footer {
+    margin-top: 30px;
+    padding: 30px 0;
+    border-top: 1px solid #c1c1c1;
+    text-align: center;
+}
+
+footer nav ul {
+    list-style: none;
+}
+
+footer nav ul li {
+    display: inline;
+}
+
+footer nav ul li:last-child .separador {
+    display: none;
+}
+
+footer nav ul li a {
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+footer nav ul li a:hover {
+    color: #f3920b;
+}
+
+footer .ubicacion {
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+}
+
+footer p.copyright {
+    margin-top: 20px;
+}
+
+/*** Nosotros ***/
+
+/* Selecciona el primer nivel de div debajo de .informacion-cajas */
+div.informacion-cajas > div {
+    text-align: center;
+}
+
+div.informacion-cajas > div img{
+    width: 100%;
+}
+
+@media only screen and (min-width:480px){
+    div.informacion-cajas > div{ 
+        width: 50%;
+        float: left;
+        color: #ffffff;
+    }
+
+    div.informacion-cajas > div:last-child{ 
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width:768px){
+    div.informacion-cajas > div,
+    div.informacion-cajas > div:last-child{
+        width: 33.3%;
+    }
+}
+
+div.informacion-cajas > div:nth-child(1){
+    background-color: #0a801a;
+}
+
+div.informacion-cajas > div:nth-child(2){
+    background-color: #f3920b;
+}
+
+div.informacion-cajas > div:nth-child(3){
+    background-color: #ee2731;
+}
+
+div.contenido-caja  {
+    padding: 20px 5px 5px 5px;
+}
+
+@media only screen and (min-width:992px)
+{
+    div.contenido-caja  {
+        padding-top: 50px 0; 
+    }
+}
+
+div.contenido-caja h3 {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+/*** RESPONSIVE MENU ***/
+.nuestras-especialidades {
+    padding: 0 60px;
+}
+
+div.texto-especialidad {
+    padding: 20px;
+}
+
+div.texto-especialidad h4 {
+    border-bottom: 1px solid #000000;
+    padding-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+div.texto-especialidad h4 span{
+    float: right;
+    font-size: 30px;
+    color: #f19f30;
+    font-family: 'Open Sans', sans-serif;
+}
+
+div.texto-especialidad p {
+    color: #3d3d3d;
+    line-height: 30px;
+
+/***** GRID ******/
+
+
